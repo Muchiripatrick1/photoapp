@@ -51,6 +51,10 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def confirm
+    @post = current_user.posts.build(post_params)
+    render :new if @post.invalid?
+  end
 
   private
   def set_post
