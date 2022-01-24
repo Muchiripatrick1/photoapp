@@ -61,6 +61,6 @@ class PostsController < ApplicationController
   @post = Post.find(params[:id])
   end
   def post_params
-  params.require(:post).permit(:content, :image, :user_id)
+    params.require(:post).permit(:content, :image, :user_id, :image_cache)
   end
 end
